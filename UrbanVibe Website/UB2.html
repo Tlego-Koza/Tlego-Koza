@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanVibe Clothing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+
+    /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+ /* Styling for buttons */
+ button {
+    background-color: #4CAF50; /* Green color for buttons */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Header */
+.main-header {
+    background-color: #A1C6E7;
+    padding: 10px 20px;
+    border-bottom: 2px solid #0073e6;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Navigation Bar */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+}
+
+.main-nav ul li {
+    margin: 0 10px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+
+.main-nav ul li a:hover {
+    background-color: #0073e6;
+}
+
+/* Main Content */
+.shop-links, .newsletter {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.shop-links ul li, .footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.shop-links ul li a, .footer-links ul li a {
+    text-decoration: none;
+    color: #0073e6;
+}
+
+.shop-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 10px;
+    border: none;
+    background-color: #0073e6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+footer ul li a:hover {
+    color: white;
+}
+
+/* Cart container */
+.shopping-cart {
+    position: relative;
+    width: 30px; /* Cart width */
+    height: 20px; /* Cart height */
+    margin: 50px auto;
+    margin-left: 0px;
+}
+
+/* Cart body */
+.shopping-cart .cart-body {
+    width: 30px;
+    height: 15px;
+    background-color: black; /* Cart color */
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Cart handle */
+.shopping-cart .cart-handle {
+    width: 10px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    top: -5px; /* Offset for the handle */
+    left: 20px; /* Position the handle */
+    border-radius: 3px;
+}
+
+/* Wheels */
+.shopping-cart .wheel {
+    width: 6px;
+    height: 6px;
+    background-color: black;
+    border-radius: 50%; /* Make wheels circular */
+    position: absolute;
+    bottom: -1px; /* Position the wheels below the cart */
+}
+
+.shopping-cart .wheel.left {
+    left: 2px; /* Position left wheel */
+}
+
+.shopping-cart .wheel.right {
+    right: 2px; /* Position right wheel */
+}
+
+.self-header {
+    position: absolute; /* Fixes the header to the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full-width */
+    background-color: rgb(225, 221, 224);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds shadow for separation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:  5px;
+    
+}
+
+.self-header img {
+    height: 100px;
+    
+}
+
+
+ /* Red badge */
+ .cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+}
+
+
+
+</style>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="https://aviapark.moscow/wp-content/uploads/2023/05/urban_vibes_logo-1-300x180.jpg" alt="UrbanVibes Logo">
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" placeholder="Search Items, Brands & Categories" class="search-bar">
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="Welcoming page.html">Home</a></li>
+                <li><a href="UrbanVibes.html">Shop</a></li>
+                <li><a href="AboutUs.html">About</a></li>
+                <li><a href="ContactUs.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-section-main">
+            <div class="hero-section-into-text">
+                <p>"Fashion is part of the daily air and it changes all the time, with all the events. You can even see the approaching of a revolution in clothes. You can see and feel everything in clothes." — Diana Vreeland</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook-official hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-instagram hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-snapchat hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-pinterest-p hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-twitter hover-opacity"></i></a>
+                    <a href="#"><i class="fa fa-linkedin hover-opacity"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+       
+    <!-- Men's Clothing -->
+    <section class="category">
+        <h2>Men's Clothing</h2>
+        <div class="product">
+            <div class="product-info">
+                <h3>Men's T-Shirt</h3>
+                <p>Price: R120</p>
+                <label for="sizeTShirt">Size:</label>
+                <select id="sizeTShirt">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <label for="quantityTShirt">Quantity:</label>
+                <input type="number" id="quantityTShirt" min="1" value="1">
+                <button onclick="addToCart('Men\'s T-Shirt', 120, 'sizeTShirt', 'quantityTShirt');">Add to Cart</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3MUBkIQigVgTpfneK3AcgLqmT0caJSE62gg&s" alt="Men's T-Shirt">
+            </div>
+        </div>
+        <div class="product">
+            <div class="product-info">
+                <h3>Men's Jeans</h3>
+                <p>Price: R300</p>
+                <label for="sizeJeans">Size:</label>
+                <select id="sizeJeans">
+                    <option value="30">30</option>
+                    <option value="32">32</option>
+                    <option value="34">34</option>
+                    <option value="36">36</option>
+                </select>
+                <label for="quantityJeans">Quantity:</label>
+                <input type="number" id="quantityJeans" min="1" value="1">
+                <button onclick="addToCart('Men\'s Jeans', 300, 'sizeJeans', 'quantityJeans');">Add to Cart</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyrKmxQiLpcrEFb2EiAfU6IxgnWl8ouATKVg&s" alt="Men's Jeans">
+            </div>
+        </div>
+    </section>
+
+    <!-- Women's Clothing -->
+    <section class="category">
+        <h2>Women's Clothing</h2>
+        <div class="product">
+            <div class="product-info">
+                <h3>Women's Dress</h3>
+                <p>Price: R250</p>
+                <label for="sizeDress">Size:</label>
+                <select id="sizeDress">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <label for="quantityDress">Quantity:</label>
+                <input type="number" id="quantityDress" min="1" value="1">
+                <button onclick="addToCart('Women\'s Dress', 250, 'sizeDress', 'quantityDress');">Add to Cart</button>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYaz61sD8UNm2_d6UTCouoMHNg4GMobJkahg&s" alt="Women's Dress">
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Women's Skirt</h3>
+                    <p>Price: R180</p>
+                    <label for="sizeSkirt">Size:</label>
+                    <select id="sizeSkirt">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <label for="quantitySkirt">Quantity:</label>
+                    <input type="number" id="quantitySkirt" min="1" value="1" />
+                    <button onclick="addToCart('Women\'s Skirt', 180, 'sizeSkirt', 'quantitySkirt'); addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMF53-C-4w2-DZxL9Y1s5ufP-YyQh_SMU0_Q&s" alt="Women's Skirt">
+            </div>
+        </div>
+    </div>
+
+ <!-- Kids' Clothing Category -->
+ <div class="category">
+    <h2>Kids' Clothing</h2>
+    <div class="product">
+        <div class="product-info">
+            <div>
+                <h3>Kids' Hoodie</h3>
+                <p>Price: R150</p>
+                <label for="sizeHoodie">Size:</label>
+                <select id="sizeHoodie">
+                    <option value="2-3Y">2-3Y</option>
+                    <option value="4-5Y">4-5Y</option>
+                    <option value="6-7Y">6-7Y</option>
+                    <option value="8-9Y">8-9Y</option>
+                </select>
+                <label for="quantityHoodie">Quantity:</label>
+                <input type="number" id="quantityHoodie" min="1" value="1" />
+                <button onclick="addToCart('Kids\' Hoodie', 150, 'sizeHoodie', 'quantityHoodie'); addnumCart()">Add to Cart</button>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-RVIzdmBO7LrWuhA3tbLRlh1nSwxfo1B8bQ&s" alt="Kids' Hoodie">
+        </div>
+    </div>
+
+    <!-- Kids' Shorts -->
+    <div class="product">
+        <div class="product-info">
+            <div>
+                <h3>Kids' Shorts</h3>
+                <p>Price: R120</p>
+                <label for="sizeShorts">Size:</label>
+                <select id="sizeShorts">
+                    <option value="2-3Y">2-3Y</option>
+                    <option value="4-5Y">4-5Y</option>
+                    <option value="6-7Y">6-7Y</option>
+                    <option value="8-9Y">8-9Y</option>
+                </select>
+                <label for="quantityShorts">Quantity:</label>
+                <input type="number" id="quantityShorts" min="1" value="1" />
+                <button onclick="addToCart('Kids\' Shorts', 120, 'sizeShorts', 'quantityShorts'); addnumCart()">Add to Cart</button>
+            </div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ardS8Fqig5DsOqJifmEplib5cmj5uYGLsw&s" alt="Kids' Shorts">
+        </div>
+    </div>
+</div>
+
+<!-- Accessories Category -->
+<div class="category">
+    <h2>Accessories</h2>
+
+    <!-- Sunglasses -->
+    <div class="product">
+        <div class="product-info">
+            <div>
+                <h3>Sunglasses</h3>
+                <p>Price: R80</p>
+                <label for="quantitySunglasses">Quantity:</label>
+                <input type="number" id="quantitySunglasses" min="1" value="1" />
+                <button onclick="addToCart('Sunglasses', 80, null, 'quantitySunglasses')">Add to Cart</button>
+            </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmEq_gu3Eb_pQOx1sbDlovW10FAc1oey6-IQ&s" alt="Sunglasses">
+            </div>
+        </div>
+
+        <!-- Hat -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Hat</h3>
+                    <p>Price: R60</p>
+                    <label for="quantityHat">Quantity:</label>
+                    <input type="number" id="quantityHat" min="1" value="1" />
+                    <button onclick="addToCart('Hat', 60, null, 'quantityHat'); addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRwlsR2GHlydmCPR-TzEYopdnBBG9DGg2yzg&s" alt="Hat">
+            </div>
+        </div>
+    </div>
+
+ <!-- Cart and Checkout Button -->
+ <div class="cart">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p id="totalPrice">Total: R0</p>
+    <button onclick="openCheckout()">Checkout</button>
+</div>
+
+    </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <h2>Hook Me Up with Fashion News</h2>
+            <form>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <h3>Get to Know Us</h3>
+                <ul>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                   
+                </ul>
+            </div>
+            <div class="footer-help">
+                <h3>Need Help?</h3>
+                <ul>
+                    <li><a href="#">Delivery & Returns</a></li>
+                    <li><a href="#">FAQ’s</a></li>
+                    <li><a href="ContactUs.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; 2024 UrbanVibe. All rights reserved.</p>
+    </footer>
+
+    <script>
+
+        let cart = [];
+        let users = {};
+        let shippingDetails = {};
+        let paymentDetails = {};
+
+
+        function addToCart(productName, price, sizeId, quantityId) {
+            const size = sizeId ? document.getElementById(sizeId).value : "One Size";
+            const quantity = parseInt(document.getElementById(quantityId).value);
+    
+            const existingItem = cart.find(item => item.productName === productName && item.size === size);
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ productName, price, size, quantity });
+            }
+            updateCartDisplay();
+            alert(`${quantity} ${productName}(s) added to cart.`);
+        }
+
+        function displayCheckoutSummary() {
+            let checkoutItemsHTML = "";
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                checkoutItemsHTML += `<div>${item.productName} (${item.size}) x ${item.quantity} = R${itemTotal}</div>`;
+                total += itemTotal;
+            });
+            document.getElementById("checkoutSummary").innerHTML = checkoutItemsHTML;
+            document.getElementById("checkoutTotalPrice").textContent = `Total: R${total}`;
+        }
+
+        function updateCartDisplay() {
+            let cartItemsHTML = "";
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                cartItemsHTML += `<div class="cart-item">${item.productName} (${item.size}) x ${item.quantity} = R${itemTotal}</div>`;
+                total += itemTotal;
+            });
+            document.getElementById("cartItems").innerHTML = cartItemsHTML;
+            document.getElementById("totalPrice").textContent = `Total: R${total}`;
+        }
+    
+        function openCheckout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty. Please add items to proceed to checkout.");
+                return;
+            }
+            document.getElementById("storePage").style.display = "none";
+            document.getElementById("shippingPage").style.display = "block";
+        }
+        
+        
+          let cartCount = 0; 
+
+          // Function to update the cart count
+          function addnumCart() {
+              cartCount++; // Increment cart count
+              document.getElementById('cartBadge').textContent = cartCount; // Update badge text
+          }
+          function openCheckout() {
+            window.location.href = "shipping.html";
+        }
+        
+    </script>
+</body>
+</html>

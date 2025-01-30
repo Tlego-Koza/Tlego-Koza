@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - UrbanVibe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+    .auth-section {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: rgb(179, 252, 255);;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .auth-section h2 {
+        margin-bottom: 20px;
+        font-size: 1.8em;
+        color: #0073e6;
+    }
+    
+    .auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .auth-form label {
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    .auth-form input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .auth-form button {
+        padding: 10px;
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    
+    .auth-form button:hover {
+        background-color: #005bb5;
+    }
+    
+    .auth-form p {
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #333;
+    }
+    
+    .auth-form a {
+        color: #0073e6;
+        text-decoration: none;
+    }
+    
+    .auth-form a:hover {
+        text-decoration: underline;
+    }
+    
+</style>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://aviapark.moscow/wp-content/uploads/2023/05/urban_vibes_logo-1-300x180.jpg" alt="UrbanVibes Logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <h2>Sign Up</h2>
+            <form action="#" method="post" class="auth-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+                <button onclick="redirectToPage()">SignUp</button>
+                <p>Already have an account? <a href="Login.html">Login</a></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 UrbanVibe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function redirectToPage() {
+            window.location.href = "Login.html";
+        }
+    </script>
+</body>
+</html>

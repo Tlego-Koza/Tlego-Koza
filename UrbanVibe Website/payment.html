@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method - UrbanVibe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+    .checkout-section {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .checkout-section h2 {
+        margin-bottom: 20px;
+        font-size: 1.8em;
+        color: #0073e6;
+    }
+    
+    .checkout-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .checkout-form label {
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    .checkout-form input, .checkout-form textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .checkout-form button {
+        padding: 10px;
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    
+    .checkout-form button:hover {
+        background-color: #005bb5;
+    }
+    
+    .confirmation-details {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .confirmation-details p {
+        margin: 10px 0;
+        font-size: 1.1em;
+        color: #333;
+    }
+    
+    .btn-primary {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0073e6;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .btn-primary:hover {
+        background-color: #005bb5;
+    }
+    
+</style>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://aviapark.moscow/wp-content/uploads/2023/05/urban_vibes_logo-1-300x180.jpg" alt="UrbanVibes Logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="checkout-section">
+            <h2>Payment Method</h2>
+            <form action="CheckoutConfirmation.html" method="post" class="checkout-form">
+                <label for="card-name">Cardholder Name</label>
+                <input type="text" id="card-name" name="card-name" placeholder="Enter the cardholder's name" required>
+
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+
+                <label for="expiry">Expiry Date</label>
+                <input type="month" id="expiry" name="expiry" required>
+
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="Enter the CVV" required>
+
+                <button onclick="redirectToPage()">Confirm Payment</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 UrbanVibe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function redirectToPage() {
+            window.location.href = "checkout.html";
+        }
+    </script>
+</body>
+</html>

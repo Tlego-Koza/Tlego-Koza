@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Confirmation - UrbanVibe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+
+    .checkout-section {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    
+    .checkout-section h2 {
+        margin-bottom: 20px;
+        font-size: 1.8em;
+        color: #0073e6;
+    }
+    
+    .checkout-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .checkout-form label {
+        text-align: left;
+        font-weight: bold;
+    }
+    
+    .checkout-form input, .checkout-form textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .checkout-form button {
+        padding: 10px;
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    
+    .checkout-form button:hover {
+        background-color: #005bb5;
+    }
+    
+    .confirmation-details {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .confirmation-details p {
+        margin: 10px 0;
+        font-size: 1.1em;
+        color: #333;
+    }
+    
+    .btn-primary {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #0073e6;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .btn-primary:hover {
+        background-color: #005bb5;
+    }
+    
+</style>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://aviapark.moscow/wp-content/uploads/2023/05/urban_vibes_logo-1-300x180.jpg" alt="UrbanVibes Logo">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="checkout-section">
+            <h2>Order Confirmation</h2>
+            <div class="confirmation-details">
+                <p>Thank you for your purchase!</p>
+                <p>Your order has been successfully placed.</p>
+                <p>We will send the tracking details to your registered email address soon.</p>
+                <a href="Welcoming page.html" class="btn-primary">Return to Home</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 UrbanVibe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function displayCheckoutSummary() {
+            let checkoutItemsHTML = "";
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                checkoutItemsHTML += `<div>${item.productName} (${item.size}) x ${item.quantity} = R${itemTotal}</div>`;
+                total += itemTotal;
+            });
+            document.getElementById("checkoutSummary").innerHTML = checkoutItemsHTML;
+            document.getElementById("checkoutTotalPrice").textContent = `Total: R${total}`;
+        }
+    
+        function confirmOrder() {
+            alert(`Order confirmed! Thank you for shopping with us.`);
+            cart = [];
+            updateCartDisplay();
+            document.getElementById("checkoutPage").style.display = "none";
+            document.getElementById("storePage").style.display = "block";
+        }
+    </script>
+</body>
+</html>

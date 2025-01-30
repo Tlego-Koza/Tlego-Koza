@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>UrbanVibe Clothing</title>
+</head>
+
+<style>
+
+        /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header */
+.main-header {
+    background-color: #A1C6E7;
+    padding: 10px 20px;
+    border-bottom: 2px solid #0073e6;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-btn {
+    padding: 10px 15px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #005bb5;
+}
+
+/* Navigation Bar */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+}
+
+.main-nav ul li {
+    margin: 0 10px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+
+.main-nav ul li a:hover {
+    background-color: #0073e6;
+}
+
+/* Main Content */
+.shop-links, .newsletter {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.shop-links ul li, .footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.shop-links ul li a, .footer-links ul li a {
+    text-decoration: none;
+    color: #0073e6;
+}
+
+.shop-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 10px;
+    border: none;
+    background-color: #0073e6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+footer ul li a:hover {
+    color: white;
+}
+
+</style>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="home-button">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home-content">
+            <h1>Welcome to UrbanVibe Clothing!</h1>
+            <p>At UrbanVibe Clothing, we believe that fashion is a powerful form of self-expression. Our mission is to provide you with trendy, stylish, and affordable clothing that reflects your unique personality and lifestyle. Whether you're looking for casual wear, chic outfits for a night out, or comfortable everyday pieces, we have something for everyone.</p>
+            
+            <h2>Explore Our Collections</h2>
+            <ul>
+                <li><strong>Trendy Apparel:</strong> Discover our latest arrivals and seasonal collections that keep you ahead of the fashion curve.</li>
+                <li><strong>Versatile Styles:</strong> From laid-back streetwear to elegant evening attire, find the perfect outfit for any occasion.</li>
+                <li><strong>Quality You Can Trust:</strong> We prioritize quality in every piece we offer, ensuring that you not only look good but feel good too.</li>
+            </ul>
+
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li><strong>Affordable Fashion:</strong> Enjoy high-quality clothing without breaking the bank. We believe everyone deserves to look their best.</li>
+                <li><strong>Customer-Centric Approach:</strong> Your satisfaction is our priority. We’re here to help you find the perfect fit and style.</li>
+                <li><strong>Community Engagement:</strong> Join our vibrant community of fashion lovers! Follow us on social media for style inspiration, exclusive offers, and more.</li>
+            </ul>
+
+            <h2>Stay Connected</h2>
+            <p>Don’t miss out on our latest updates, promotions, and style tips! Sign up for our newsletter and follow us on social media to stay in the loop.</p>
+
+            <h2>Start Shopping Today!</h2>
+            <p>Dive into the UrbanVibe experience and elevate your wardrobe. Click below to explore our collections and find your next favorite outfit!</p>
+            <a href="shop.html" class="shop-now-button">Shop Now</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 UrbanVibe Clothing. All rights reserved.</p>
+    </footer>
+</body>
+</html>

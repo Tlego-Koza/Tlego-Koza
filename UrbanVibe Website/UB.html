@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanVibe Clothing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/3paNdFZ/3Y3z2pBixkZtD69N9WW9q" crossorigin="anonymous">
+    <style>
+        /* Default background color for the entire body */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fcfcfc; /* Baby blue */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Specific styling for the login page */
+        #authPage {
+            background-color: white; /* White background for the login page */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        /* Container for sections with padding */
+        .container {
+            max-width: 800px;
+            padding: 20px;
+        }
+        .formfill {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            border: none; 
+            border-bottom: 3px solid #000000; 
+            border-radius: 10px; 
+            background-color: #d4d0d0; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            text-align: center;
+            width: 500px; 
+            
+        }
+
+
+        /* Input field styling */
+        .formfill input[type="text"],
+        .formfill input[type="email"],
+        .formfill input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: none; 
+            border-bottom: 1px solid #000000; 
+            font-size: 1em;
+            
+            
+        }
+
+        /* Button styling */
+        .formfill button {
+            padding: 10px 20px;
+            background-color: #000000; 
+            color: rgb(184, 183, 183);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 10px 0;
+            background-color: rgb(176, 175, 175);
+        }
+
+        .input-field {
+            margin-bottom: 10px;
+        }
+
+        /* Styling for buttons */
+        button {
+            background-color: #000000; /* Green color for buttons */
+            color: rgb(170, 165, 165);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #9ca09c;
+        }
+
+        /* Header and Footer Styles */
+header, footer {
+    background: linear-gradient(135deg, #0072ff, #00c6ff); /* Gradient from blue to cyan */
+    color: rgb(63, 129, 230);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+}
+
+/* Header Specific Styles */
+header {
+    position:absolute;
+    top: 0;
+    z-index: 10;
+}
+
+header .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+header .brand {
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffdd57; /* Yellow accent for brand name */
+    text-decoration: none;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer Specific Styles */
+footer {
+    border-radius: 20px 20px 0 0; /* Rounded top corners */
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer .social-links a {
+    color: #ffdd57; /* Yellow for social links */
+    font-size: 1.2em;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #ffd700; /* Bright yellow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .nav {
+        flex-direction: column;
+    }
+
+    header nav a {
+        margin: 5px 0;
+    }
+
+    footer .social-links a {
+        font-size: 1em;
+    }
+}
+
+/* Style for Social Media Icons */
+.icons {
+    font-size: 30px; /* Icon size */
+    color: white; /* Icon color */
+    margin: 0 10px; /* Spacing between icons */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+    text-decoration: none; /* Remove underline */
+}
+
+.icons:hover {
+    color: #ffdd57; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+.hero-section .margin-top a {
+    display: inline-block;
+}
+
+/* Optional: Add a slightly transparent background on hover */
+.icons:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* White background with slight transparency */
+    border-radius: 50%; /* Circle background */
+    padding: 5px; /* Space around icon inside the circle */
+}
+
+/* Cart container */
+.shopping-cart {
+            position: relative;
+            width: 30px; /* Cart width */
+            height: 20px; /* Cart height */
+            margin: 50px auto;
+            margin-left: 0px;
+        }
+
+        /* Cart body */
+        .shopping-cart .cart-body {
+            width: 30px;
+            height: 15px;
+            background-color: black; /* Cart color */
+            border-radius: 5px;
+            position: relative;
+        }
+
+        /* Cart handle */
+        .shopping-cart .cart-handle {
+            width: 10px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top: -5px; /* Offset for the handle */
+            left: 20px; /* Position the handle */
+            border-radius: 3px;
+        }
+
+        /* Wheels */
+        .shopping-cart .wheel {
+            width: 6px;
+            height: 6px;
+            background-color: black;
+            border-radius: 50%; /* Make wheels circular */
+            position: absolute;
+            bottom: -1px; /* Position the wheels below the cart */
+        }
+
+        .shopping-cart .wheel.left {
+            left: 2px; /* Position left wheel */
+        }
+
+        .shopping-cart .wheel.right {
+            right: 2px; /* Position right wheel */
+        }
+
+        .self-header {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%; /* Full-width */
+            background-color: rgb(212, 209, 209);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds shadow for separation */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:  5px;
+            
+        }
+
+        .self-header img {
+            height: 100px;
+            
+        }
+
+        
+         /* Red badge */
+         .cart-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+             
+        }
+
+        .product {
+            display: inline-block; /* Makes the divs align horizontally */
+            width: 300px;
+            height: 100px;
+            background-color: rgb(255, 255, 255);
+            margin: 10px;
+            margin
+        }
+
+        .product img {
+            width: 100%;
+            height: 400px; /* Set a fixed height */
+            object-fit: cover;
+        }
+        .boxx {
+            height: 100px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+<!-- Signup Page -->
+<div id="signupPage" class="formfill">
+    <h2>Sign Up for UrbanVibe</h2>
+    <input type="text" id="signupName" placeholder="Full Name" required /><br><br>
+    <input type="email" id="signupEmail" placeholder="Email" required /><br><br>
+    <input type="text" id="signupPhone" placeholder="Phone Number" required /><br><br>
+    <input type="password" id="signupPassword" placeholder="Password" required /><br><br>
+    <button onclick="signup()">Sign Up</button>
+    <br>
+    <p id="signupMessage"></p>
+</div>
+
+<!-- Login Page -->
+<div id="loginPage" class="formfill" style="display: none;">
+    <h2>UrbanVibe Login</h2>
+    <input type="text" id="loginEmail" placeholder="Email" /><br><br>
+    <input type="password" id="loginPassword" placeholder="Password" /><br><br>
+    <button onclick="login()">Login</button>
+    <p id="loginMessage"></p>
+</div>
+
+<!-- Store Page -->
+<div id="storePage" class="container" style="display: none;">   
+
+    <div  class="hero-section animate-left " id="home">
+        <div class="hero-section-main">
+           <div class="hero-section-into-text margin-top">
+               
+            <div class="self-header">
+                <img src="https://aviapark.moscow/wp-content/uploads/2023/05/urban_vibes_logo-1-300x180.jpg" alt="Urban Vibe Logo">
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" placeholder="Search Items, Brands & Categories" class="search-bar">
+                    <button class="search-btn">Search</button>
+                </div>
+                <!-- Shopping cart -->
+                <div class="shopping-cart">
+                    <div class="cart-body"></div>
+                    <div class="cart-handle"></div>
+                    <div class="wheel left"></div>
+                    <div class="wheel right"></div>
+                    <div class="cart-badge" id="cartBadge">0</div>
+                </div>
+            
+                
+                    
+            </div>
+             
+               <div class="text-white l " style="margin-top:60px">
+                 <p >"Fashion is part of the daily air and it changes all the time,
+                    with all the events. You can even see the approaching of a revolution in clothes. 
+                   You can see and feel everything in clothes." —Diana Vreeland</p>
+                 <div class="margin-top">
+                   
+                    
+  
+                  <a href="#">  <i class="fa fa-facebook-official hover-opacity icons" ></i></a> 
+                  <a href="#"><i class="fa fa-instagram hover-opacity icons" ></i></a> 
+                  <a href="#"><i class="fa fa-snapchat hover-opacity icons"></i></a>  
+                  <a href="#"><i class="fa fa-pinterest-p hover-opacity icons" ></i></a>  
+                  <a href="#"><i class="fa fa-twitter hover-opacity icons"></i></a>  
+                  <a href="#"><i class="fa fa-linkedin hover-opacity icons"></i></a>  
+                </div>
+               </div>
+               
+           </div>
+        </div>    
+        </div>
+  
+    <!-- Men's Clothing Category -->
+    <div class="category">
+
+        <h2>Men's Clothing</h2>
+        
+        <!-- Men's T-Shirt -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Men's T-Shirt</h3>
+                    <p>Price: R120</p>
+                    <label for="sizeTShirt">Size:</label>
+                    <select id="sizeTShirt">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <label for="quantityTShirt">Quantity:</label>
+                    <input type="number" id="quantityTShirt" min="1" value="1" />
+                    <button onclick="addToCart('Men\'s T-Shirt', 120, 'sizeTShirt', 'quantityTShirt'); addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3MUBkIQigVgTpfneK3AcgLqmT0caJSE62gg&s" alt="Men's T-Shirt">
+            </div>
+        </div>
+
+        <!-- Men's Jeans -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Men's Jeans</h3>
+                    <p>Price: R300</p>
+                    <label for="sizeJeans">Size:</label>
+                    <select id="sizeJeans">
+                        <option value="30">30</option>
+                        <option value="32">32</option>
+                        <option value="34">34</option>
+                        <option value="36">36</option>
+                    </select>
+                    <label for="quantityJeans">Quantity:</label>
+                    <input type="number" id="quantityJeans" min="1" value="1" />
+                    <button onclick="addToCart('Men\'s Jeans', 300, 'sizeJeans', 'quantityJeans');addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyrKmxQiLpcrEFb2EiAfU6IxgnWl8ouATKVg&s" alt="Men's Jeans">
+            </div>
+        </div>
+    </div>
+
+    <!-- Women's Clothing Category -->
+    <div class="category">
+        <h2>Women's Clothing</h2>
+        
+        <!-- Women's Dress -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Women's Dress</h3>
+                    <p>Price: R250</p>
+                    <label for="sizeDress">Size:</label>
+                    <select id="sizeDress">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <label for="quantityDress">Quantity:</label>
+                    <input type="number" id="quantityDress" min="1" value="1" />
+                    <button onclick="addToCart('Women\'s Dress', 250, 'sizeDress', 'quantityDress'); addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYaz61sD8UNm2_d6UTCouoMHNg4GMobJkahg&s" alt="Women's Dress">
+            </div>
+        </div>
+
+        <!-- Women's Skirt -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Women's Skirt</h3>
+                    <p>Price: R180</p>
+                    <label for="sizeSkirt">Size:</label>
+                    <select id="sizeSkirt">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <label for="quantitySkirt">Quantity:</label>
+                    <input type="number" id="quantitySkirt" min="1" value="1" />
+                    <button onclick="addToCart('Women\'s Skirt', 180, 'sizeSkirt', 'quantitySkirt'); addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMF53-C-4w2-DZxL9Y1s5ufP-YyQh_SMU0_Q&s" alt="Women's Skirt">
+            </div>
+        </div>
+    </div>
+
+    <!-- Kids' Clothing Category -->
+    <div class="category">
+        <h2>Kids' Clothing</h2>
+
+        <!-- Kids' Hoodie -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Kids' Hoodie</h3>
+                    <p>Price: R150</p>
+                    <label for="sizeHoodie">Size:</label>
+                    <select id="sizeHoodie">
+                        <option value="2-3Y">2-3Y</option>
+                        <option value="4-5Y">4-5Y</option>
+                        <option value="6-7Y">6-7Y</option>
+                        <option value="8-9Y">8-9Y</option>
+                    </select>
+                    <label for="quantityHoodie">Quantity:</label>
+                    <input type="number" id="quantityHoodie" min="1" value="1" />
+                    <button onclick="addToCart('Kids\' Hoodie', 150, 'sizeHoodie', 'quantityHoodie'); addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-RVIzdmBO7LrWuhA3tbLRlh1nSwxfo1B8bQ&s" alt="Kids' Hoodie">
+            </div>
+        </div>
+
+        <!-- Kids' Shorts -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Kids' Shorts</h3>
+                    <p>Price: R120</p>
+                    <label for="sizeShorts">Size:</label>
+                    <select id="sizeShorts">
+                        <option value="2-3Y">2-3Y</option>
+                        <option value="4-5Y">4-5Y</option>
+                        <option value="6-7Y">6-7Y</option>
+                        <option value="8-9Y">8-9Y</option>
+                    </select>
+                    <label for="quantityShorts">Quantity:</label>
+                    <input type="number" id="quantityShorts" min="1" value="1" />
+                    <button onclick="addToCart('Kids\' Shorts', 120, 'sizeShorts', 'quantityShorts'); addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-ardS8Fqig5DsOqJifmEplib5cmj5uYGLsw&s" alt="Kids' Shorts">
+            </div>
+        </div>
+    </div>
+
+    <!-- Accessories Category -->
+    <div class="category">
+        <h2>Accessories</h2>
+
+        <!-- Sunglasses -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Sunglasses</h3>
+                    <p>Price: R80</p>
+                    <label for="quantitySunglasses">Quantity:</label>
+                    <input type="number" id="quantitySunglasses" min="1" value="1" />
+                    <button onclick="addToCart('Sunglasses', 80, null, 'quantitySunglasses')">Add to Cart</button>
+                </div>
+                <img src="data:image/jpeg;base64,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" alt="Sunglasses">
+            </div>
+        </div>
+
+        <!-- Hat -->
+        <div class="product">
+            <div class="product-info">
+                <div>
+                    <h3>Hat</h3>
+                    <p>Price: R60</p>
+                    <label for="quantityHat">Quantity:</label>
+                    <input type="number" id="quantityHat" min="1" value="1" />
+                    <button onclick="addToCart('Hat', 60, null, 'quantityHat'); addnumCart()">Add to Cart</button>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRwlsR2GHlydmCPR-TzEYopdnBBG9DGg2yzg&s" alt="Hat">
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Cart and Checkout Button -->
+ <div class="cart">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <p id="totalPrice">Total: R0</p>
+    <button onclick="openCheckout()">Checkout</button>
+</div>
+
+<!-- Customer Feedback-->
+<div class="light-gray" style="margin-top: 40px; padding: 50px 0px;" id="testimony">
+
+
+    <div class="feedback">
+      <div class="container ">
+        <h2 class="section-text-header" style="margin-top: 0px !important;">Customer FeedBack</h2>
+      </div> 
+      <div class="Customer-feedback" style="display: flex;justify-content: space-evenly;flex-wrap: wrap;">
+       <div class="card">
+        <div class="customer-feedback-header">
+           <div class="customer-profile">
+             <img src="https://i.pinimg.com/236x/11/0e/43/110e433f54ef3c394907278fc15af055.jpg" alt="image" height="130" width="130">
+           </div>
+           <div>
+             <p class="name">Sara Mokoena</p>
+             
+           </div>
+        </div>
+       <div>
+         <p class="small">"Your items were a huge success!"</p>
+       </div>
+      </div>
+
+      <div class="card">
+        <div class="customer-feedback-header">
+           <div class="customer-profile">
+             <img src="https://images-us.nivea.com/-/media/nivea/local/ng/articles2/moisturizer-for-men---maain-banner.jpg?rx=1929&ry=0&rw=687&rh=806" alt="image" height="130" width="130">
+           </div>
+           <div>
+             <p class="name">John Radebe</p>
+             
+           </div>
+        </div>
+       <div>
+         <p class="small">"With Gratitude...for making this world & my life better!"</p>
+       </div>
+      </div>
+     
+    
+    
+      </div> 
+    </div>
+    
+    </div>
+    
+    <br>
+      <div class="center contact" id="contact" >
+        <div class=" left-align margin-top contact-info ">
+           <h3 style="font-weight: 800;" class="contact-head">GET IN TOUCH</h3> 
+           <h4 style="font-weight: 600;">Your styles at low cost 
+           </h4>
+           <p>We care about our customers<br>you can contact us for any feedback</p>
+           
+           
+         <i class="fa fa-facebook-official hover-opacity icons"  ></i>
+         <i class="fa fa-instagram hover-opacity icons" ></i>
+         <i class="fa fa-snapchat hover-opacity icons"></i>
+         <i class="fa fa-pinterest-p hover-opacity icons" ></i>
+         <i class="fa fa-twitter hover-opacity icons"></i>
+         <i class="fa fa-linkedin hover-opacity icons"></i>
+        </div>
+        <div class="left-align margin-top contact-info" >
+              <h3 style="font-weight: 600;">OPENING HOURS</h3>
+                 <p>Mon - Sat 7am - 9pm:</p>
+                 <p>Opening on Morning | Off at afternoon</p>
+                 <p>Delivery only on opening hours</p>
+                 <br>
+                 <div class="margin-to  left-align" >
+                  <h4 style="font-weight: 600;">CONTACT INFO</h4>
+                  <p> <i class="fa fa-phone " style="margin-right: 8px;font-size: 20px;"></i>016-842-3218</p>
+                  <p><i class="fa fa-phone" style="margin-right: 8px;font-size: 20px;"></i>016-987-2541</p>
+                  <label><i class="fa fa-envelope " style=" margin-right: 5px;font-size: 20px;"></i></label>
+                 <input placeholder="Email" class="margin-top" type="email"/>
+                 <br>
+                 <br>
+                 <button class="button red round " style="margin-left: 30px;">Subscribe</button>
+        
+               </div>     
+                     
+        </div>
+        
+        
+      </div>
+    
+    
+      <div class="flat-midnight-blue padding center margin-top">
+        <p>Powered by Urban Vibes.com</p>
+      </div>
+       
+   
+
+</div>
+
+<!-- Shipping Details Page -->
+<div id="shippingPage" class="container shipping-container" style="display: none;">
+    <h2>Enter Shipping Details</h2>
+    <input type="text" id="fullName" placeholder="Full Name" required /><br><br>
+    <input type="text" id="address" placeholder="Address" required /><br><br>
+    <input type="text" id="city" placeholder="City" required /><br><br>
+    <input type="text" id="zipCode" placeholder="Zip Code" required /><br><br>
+    <button onclick="submitShipping()">Submit Shipping Details</button>
+    <p id="shippingMessage"></p>
+</div>
+
+<!-- Payment Method Page -->
+<div id="paymentPage" class="container payment-container" style="display: none;">
+    <h2>Enter Payment Method</h2>
+    <input type="text" id="cardName" placeholder="Card Holder's Name" required /><br><br>
+    <input type="text" id="cardNumber" placeholder="Card Number" required /><br><br>
+    <input type="text" id="expiryDate" placeholder="Expiry Date (MM/YY)" required /><br><br>
+    <input type="text" id="cvv" placeholder="CVV" required /><br><br>
+    <button onclick="submitPayment()">Submit Payment</button>
+    <p id="paymentMessage"></p>
+</div>
+
+<!-- Checkout Confirmation Page -->
+<div id="checkoutPage" class="container checkout-container" style="display: none;">
+    <h2>Order Summary</h2>
+    <div id="checkoutSummary"></div>
+    <p id="checkoutTotalPrice">Total: R0</p>
+    <button onclick="confirmOrder()">Confirm Order</button>
+</div>
+
+
+<footer>
+    <p>&copy; 2024 Urban Vibes. All rights reserved.</p>
+    <div class="social-links">
+        <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </div>
+</footer>
+
+<script>
+    let cart = [];
+    let users = {};
+    let shippingDetails = {};
+    let paymentDetails = {};
+
+    function signup() {
+        const name = document.getElementById("signupName").value;
+        const email = document.getElementById("signupEmail").value;
+        const phone = document.getElementById("signupPhone").value;
+        const password = document.getElementById("signupPassword").value;
+        const signupMessage = document.getElementById("signupMessage");
+
+        // Validate phone number
+        if (phone.length !== 10 || isNaN(phone)) {
+            signupMessage.textContent = "Phone number must be exactly 10 digits.";
+            return;
+        }
+
+        // Check if email is already registered
+        if (users[email]) {
+            signupMessage.textContent = "Email already registered. Please log in.";
+            return;
+        }
+
+        // Register the user
+        users[email] = { name, phone, password };
+        signupMessage.textContent = "Sign up successful! Redirecting to login page...";
+
+        // Redirect to login page after signup
+        setTimeout(() => {
+            document.getElementById("signupPage").style.display = "none";
+            document.getElementById("loginPage").style.display = "block";
+        }, 1500);
+    }
+
+    function login() {
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+        const loginMessage = document.getElementById("loginMessage");
+
+        if (users[email] && users[email].password === password) {
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("storePage").style.display = "block";
+            document.getElementById("welcomeMessage").textContent = `Welcome, ${users[email].name}!`;
+        } else {
+            loginMessage.textContent = "Incorrect email or password.";
+        }
+    }
+
+    function addToCart(productName, price, sizeId, quantityId) {
+        const size = sizeId ? document.getElementById(sizeId).value : "One Size";
+        const quantity = parseInt(document.getElementById(quantityId).value);
+
+        const existingItem = cart.find(item => item.productName === productName && item.size === size);
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            cart.push({ productName, price, size, quantity });
+        }
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        let cartItemsHTML = "";
+        let total = 0;
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            cartItemsHTML += `<div class="cart-item">${item.productName} (${item.size}) x ${item.quantity} = R${itemTotal}</div>`;
+            total += itemTotal;
+        });
+        document.getElementById("cartItems").innerHTML = cartItemsHTML;
+        document.getElementById("totalPrice").textContent = `Total: R${total}`;
+    }
+
+    function openCheckout() {
+        document.getElementById("storePage").style.display = "none";
+        document.getElementById("shippingPage").style.display = "block";
+    }
+
+    function submitShipping() {
+        shippingDetails = {
+            fullName: document.getElementById("fullName").value,
+            address: document.getElementById("address").value,
+            city: document.getElementById("city").value,
+            zipCode: document.getElementById("zipCode").value
+        };
+
+        if (Object.values(shippingDetails).every(value => value)) {
+            document.getElementById("shippingPage").style.display = "none";
+            document.getElementById("paymentPage").style.display = "block";
+        } else {
+            alert("Please complete all shipping details.");
+        }
+    }
+
+    function submitPayment() {
+        paymentDetails = {
+            cardName: document.getElementById("cardName").value,
+            cardNumber: document.getElementById("cardNumber").value,
+            expiryDate: document.getElementById("expiryDate").value,
+            cvv: document.getElementById("cvv").value
+        };
+
+        if (Object.values(paymentDetails).every(value => value)) {
+            document.getElementById("paymentPage").style.display = "none";
+            document.getElementById("checkoutPage").style.display = "block";
+            displayCheckoutSummary();
+        } else {
+            alert("Please complete all payment details.");
+        }
+    }
+
+    function displayCheckoutSummary() {
+        let checkoutItemsHTML = "";
+        let total = 0;
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            checkoutItemsHTML += `<div>${item.productName} (${item.size}) x ${item.quantity} = R${itemTotal}</div>`;
+            total += itemTotal;
+        });
+        document.getElementById("checkoutSummary").innerHTML = checkoutItemsHTML;
+        document.getElementById("checkoutTotalPrice").textContent = `Total: R${total}`;
+    }
+
+    function confirmOrder() {
+        alert(`Order confirmed! Thank you for shopping with us.`);
+        cart = [];
+        updateCartDisplay();
+        document.getElementById("checkoutPage").style.display = "none";
+        document.getElementById("storePage").style.display = "block";
+    }
+
+    function myFunction() {
+        var x = document.getElementById("navDe");
+        if (x.className.indexOf("show") == -1) {
+          x.className += " show";
+        } else { 
+          x.className = x.className.replace(" show", "");
+        }
+      }
+
+      let cartCount = 0; 
+
+    // Function to update the cart count
+    function addnumCart() {
+        cartCount++; // Increment cart count
+        document.getElementById('cartBadge').textContent = cartCount; // Update badge text
+    }
+
+</script>
+
+
+
+</body>
+</html>
+

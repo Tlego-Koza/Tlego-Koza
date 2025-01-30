@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us - UrbanVibe Clothing</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="UB.html">Shop</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact-content">
+            <h1>Contact Us</h1>
+            <p>We love to hear from our customers! If you have any questions, feedback, or need assistance, please feel free to reach out to us using the form below or through our contact information.</p>
+            
+            <h2>Get in Touch</h2>
+            <form id="contact-form" action="submit_form.php" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+
+            <h2>Contact Information</h2>
+            <p>If you prefer to reach us directly, you can contact us at:</p>
+            <ul>
+                <li><strong>Address:</strong> 9125 Vanwell Rd</li>
+                <li><strong>Phone:</strong> (016) 7882231</li>
+                <li><strong>Email:</strong> <a href="mailto:info@urbanvibeclothing.com">info@urbanvibeclothing.com</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 UrbanVibe Clothing. All rights reserved.</p>
+    </footer>
+</body>
+</html>
