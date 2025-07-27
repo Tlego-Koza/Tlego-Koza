@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Calculator</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
       background: #5a5959;
       display: flex;
       justify-content: center;
@@ -14,53 +16,64 @@
     }
 
     .calculator {
-      background: #090505;
+      background: #1e1e1e;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(125, 123, 123, 0.2);
-      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      width: 320px;
     }
 
     .display {
-      width: 95%;
-      height: 50px;
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+      width: 100%;
+      height: 60px;
+      font-size: 2rem;
+      margin-bottom: 20px;
       text-align: right;
       padding: 10px;
-      border: 1px solid #a7a6a6;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 10px;
     }
 
     .buttons {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 15px;
     }
 
     .buttons button {
       padding: 20px;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       background: #2d88ba;
       color: white;
       cursor: pointer;
+      transition: background 0.2s;
     }
 
     .buttons button:hover {
-      background: #457b9d;
+      background: #1d6a94;
     }
 
     .buttons .equal {
       grid-column: span 2;
-      background: #302a31;
+      background: #4caf50;
+    }
+
+    .buttons .equal:hover {
+      background: #3e8e41;
     }
 
     .buttons .clear {
-      background: #6c757d;
+      background: #f44336;
+    }
+
+    .buttons .clear:hover {
+      background: #c62828;
     }
   </style>
-  
 </head>
 <body>
 
@@ -99,6 +112,7 @@
     function calculate() {
       const display = document.getElementById('display');
       try {
+        // Be cautious: eval() is used here for simplicity. Avoid in production!
         display.value = eval(display.value);
       } catch {
         display.value = 'Error';
